@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css"> <!-- 추가적인 CSS 파일 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome 아이콘 추가 -->
+    <style>
+        /* 추가적인 스타일링 */
+        body {
+            background-color: #f8f9fa;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .card-body {
+            padding: 30px;
+        }
+        .btn-primary {
+            background-color: #3b699b;
+            border-color: #D0F9FD;
+            border-radius: 20px;
+            transition: all 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #27217e6b;
+            border-color: #10253b;
+        }
+        .navbar-custom {
+            background-color: #D0F9FD !important;
+        }
+        .navbar-custom .navbar-nav .nav-link {
+            color: #caa4ee;
+            font-size: 18px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        .navbar-custom .navbar-nav .nav-link:hover {
+            color: #3d7fc0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar Below Logo -->
+    <nav class="navbar navbar-expand-lg navbar-custom w-100">
+        <header class="py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <img src="logo.jfif" alt="로고" class="img-fluid" style="max-width: 230px;">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNav">
+                            <ul class="navbar-nav ml-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="file:///D:/%EC%9D%B8%EA%B3%B5%EC%A7%80%EB%8A%A5%20%ED%83%90%EA%B5%AC%EB%B0%98%2020410/index.html"><i class="fas fa-home"></i> HOME</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fas fa-utensils"></i> MENU</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fas fa-question-circle"></i> Q&A</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> 소개</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </nav> <!-- 네비게이션 바 닫기 -->
+
+    <div class="container mt-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="text-center mb-4">회원가입</h2>
+                        <form id="signup-form">
+                            <div class="form-group">
+                                <label for="username">사용자 이름</label>
+                                <input type="text" class="form-control" id="username" name="username" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">이메일 주소</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">비밀번호</label>
+                                <input type="password" class="form-control" id="password" name="password" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">가입하기</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script> <!-- 필요한 경우 JavaScript 파일 추가 -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
