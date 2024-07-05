@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>나만의 중고마켓</title>
+    <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-A7R5ODdK9pW75lUUyVUS+P7Q5i6BdYyl1eJAUHhujHTBb4f/T6MAlFzMXqI1Cw35" crossorigin="anonymous">
+    <style>
+        .card-img-top {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+        }
+
+        .hero img {
+            max-width: 250px;
+            height: auto;
+        }
+
+        .hero {
+            background-color: #D0F9FD;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .footer-nav {
+            background-color: #f8f9fa;
+            padding: 1rem 0;
+        }
+
+        .navbar-custom {
+            background-color: #fffde6;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+
+        .navbar-nav {
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        .navbar-brand {
+            margin-right: auto;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+        }
+
+        /* 장바구니 스타일링 */
+        .cart-item {
+            margin-bottom: 20px;
+        }
+
+        .cart-item .quantity-btn {
+            margin-left: 5px;
+        }
+
+        /* 인기상품 섹션 스타일링 */
+        .popular-products {
+            background-color: #ffffff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .popular-products h2 {
+            margin-bottom: 40px;
+        }
+
+        .popular-products .card {
+            width: 18rem;
+            margin-bottom: 15px;
+        }
+
+        .popular-products .card-body {
+            height: 250px; /* 카드의 높이를 고정할 수 있습니다. */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .popular-products .card-img-top {
+            height: 250px;
+            object-fit: cover; /* 이미지가 카드에 맞게 자동 조정됩니다. */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <div class="hero text-center py-5">
+        <img src="logo.jfif" alt="로고">
+        <!-- Navigation Bar Below Logo -->
+        <nav class="navbar navbar-expand-lg navbar-custom w-100">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home"></i> HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-utensils"></i> MENU</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-question-circle"></i> Q&A</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fas fa-info-circle"></i> 소개</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="member.html">회원가입</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Popular Products Section -->
+    <section class="popular-products">
+        <div class="container">
+            <h2>인기상품</h2>
+            <div class="row row-cols-2 row-cols-md-4 g-3">
+                <div class="col">
+                    <div class="card">
+                        <img src="breead1.jpg" class="card-img-top" alt="바스크 치즈" id="product-image-1">
+                        <div class="card-body">
+                            <h5 class="card-title">바스크 치즈 케이크</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">8000원</h6>
+                            <p class="card-text">고소한 치즈맛이 느껴지는 바스크 치즈 케이크! 인기 상품 입니다!</p>
+                            <button class="btn btn-primary add-to-cart" data-name="바스크 치즈 케이크" data-price="8000">장바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="cookie1.jpg" class="card-img-top" alt="쿠키" id="product-image-2">
+                        <div class="card-body">
+                            <h5 class="card-title">초코칩 쿠키</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">10000원</h6>
+                            <p class="card-text">달달한 초코칩이 박힌 쿠기입니다. 한 봉지에 쿠기가 두 개 들어가요!</p>
+                            <button class="btn btn-primary add-to-cart" data-name="초코칩 쿠키" data-price="10000">장바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="cake1.jpg" class="card-img-top" alt="딸기 케이크" id="product-image-3">
+                        <div class="card-body">
+                            <h5 class="card-title">딸기 케이크</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">12000원</h6>
+                            <p class="card-text">딸기가 올라간 달콤한 케이크. 인기 상품 입니다!</p>
+                            <button class="btn btn-primary add-to-cart" data-name="딸기 케이크" data-price="12000">장바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <img src="Tarts1.jpg" class="card-img-top" alt="딸기 타르트" id="product-image-4">
+                        <div class="card-body">
+                            <h5 class="card-title">딸기 타르트</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">5000원</h6>
+                            <p class="card-text">딸기가 풍부한 달콤한 딸기 타르트입니다. 아이들이 좋아해요!</p>
+                            <button class="btn btn-primary add-to-cart" data-name="딸기 타르트" data-price="5000">장바구니에 담기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Section -->
+    <div class="container mt-5">
+        <h2>장바구니</h2>
+        <ul class="list-group" id="cart">
+            <li class="list-group-item">장바구니가 비어 있습니다.</li>
+        </ul>
+        <h3 id="total-price">총 가격: 0원</h3>
+        <button id="checkout" class="btn btn-success">결제</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12W1H7dbsL0PLjq+P7LAq7peY5U5IY3eG5B21YVK8L+1YAn5"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const cart = document.getElementById('cart');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const totalPriceElement = document.getElementById('total-price');
+
+            function updateCartItem(cartItem, quantity) {
+                const quantitySpan = cartItem.querySelector('.quantity');
+                quantitySpan.textContent = quantity;
+                updateTotalPrice();
+            }
+
+            function createCartItem(name, price) {
+                const cartItem = document.createElement('li');
+                cartItem.className = 'list-group-item cart-item';
+                cartItem.setAttribute('data-name', name);
+                cartItem.setAttribute('data-price', price);
+                cartItem.innerHTML = `
+                    ${name} - ${price}원
+                    <span class="quantity">1</span>개
+                    <button class="btn btn-sm btn-secondary quantity-btn decrease-quantity">-</button>
+                    <button class="btn btn-sm btn-secondary quantity-btn increase-quantity">+</button>
+                `;
+                return cartItem;
+            }
+
+            function handleIncreaseQuantity(event) {
+                const cartItem = event.target.closest('.cart-item');
+                let quantity = parseInt(cartItem.querySelector('.quantity').textContent);
+                updateCartItem(cartItem, ++quantity);
+            }
+
+            function handleDecreaseQuantity(event) {
+                const cartItem = event.target.closest('.cart-item');
+                let quantity = parseInt(cartItem.querySelector('.quantity').textContent);
+                if (quantity > 1) {
+                    updateCartItem(cartItem, --quantity);
+                } else {
+                    cartItem.remove();
+                    if (cart.children.length === 0) {
+                        cart.innerHTML = '<li class="list-group-item">장바구니가 비어 있습니다.</li>';
+                    }
+                }
+                updateTotalPrice();
+            }
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const itemName = this.getAttribute('data-name');
+                    const itemPrice = parseInt(this.getAttribute('data-price'));
+
+                    let cartItem = Array.from(cart.children).find(item => item.getAttribute('data-name') === itemName);
+
+                    if (cartItem) {
+                        const quantitySpan = cartItem.querySelector('.quantity');
+                        let quantity = parseInt(quantitySpan.textContent);
+                        quantitySpan.textContent = ++quantity;
+                    } else {
+                        cartItem = createCartItem(itemName, itemPrice);
+
+                        if (cart.children[0].textContent === '장바구니가 비어 있습니다.') {
+                            cart.innerHTML = '';
+                        }
+
+                        cart.appendChild(cartItem);
+                    }
+
+                    cartItem.querySelector('.increase-quantity').addEventListener('click', handleIncreaseQuantity);
+                    cartItem.querySelector('.decrease-quantity').addEventListener('click', handleDecreaseQuantity);
+
+                    updateTotalPrice();
+                });
+            });
+
+            function updateTotalPrice() {
+                let totalPrice = 0;
+                Array.from(cart.children).forEach(item => {
+                    const price = parseInt(item.getAttribute('data-price'));
+                    const quantity = parseInt(item.querySelector('.quantity').textContent);
+                    totalPrice += price * quantity;
+                });
+                totalPriceElement.textContent = `총 가격: ${totalPrice}원`;
+                return totalPrice;
+            }
+
+            document.getElementById('checkout').addEventListener('click', function () {
+                const totalPrice = updateTotalPrice();
+                alert(`총 가격: ${totalPrice}원`);
+            });
+
+            // 초기 장바구니 상태 업데이트
+            updateTotalPrice();
+
+            // 이미지 슬라이드 기능 추가
+            const images = {
+                'product-image-1': ['breead1.jpg', 'breead2.jpg',],
+                'product-image-2': ['cookie1.jpg', 'cookie2.jpg',],
+                'product-image-3': ['cake1.jpg', 'cake2.jpg',],
+                'product-image-4': ['Tarts1.jpg', 'Tarts2.jpg',]
+            };
+
+            function changeImage(imageId, images) {
+                const imgElement = document.getElementById(imageId);
+                let currentIndex = 0;
+                setInterval(() => {
+                    currentIndex = (currentIndex + 1) % images.length;
+                    imgElement.src = images[currentIndex];
+                }, 3000); // 3초마다 이미지 변경
+            }
+
+            for (let imageId in images) {
+                changeImage(imageId, images[imageId]);
+            }
+        });
+    </script>
+</body>
+</html>
